@@ -1,0 +1,12 @@
+body {
+    background: linear-gradient(180deg, #009688 10%, #DADBD4 10%);
+    height: 100vh;
+}
+
+#app {
+    width: 90%;
+    height: 95vh;
+    margin: 20px auto;
+    /* DEBUG */
+    background-color: lightcyan;
+}
