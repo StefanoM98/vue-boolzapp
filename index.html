@@ -50,11 +50,11 @@
             </div>
             <div class="chats-list">
                 <div class="users">
-                    <div class="profile">
+                    <div class="friends" v-for= "friend in contacts">
                         <div class="profile">
-                            <img src="img/avatar_1.jpg" alt="" class="my-avatar">
+                            <img :src="friend.avatar" alt="" class="my-avatar">
                             <div class="description">
-                                <h3>Michele</h3>
+                                <h3>{{friend.name}}</h3>
                                 <p>Ultimo messaggio inviato</p>
                             </div>
                             <div class="date">
