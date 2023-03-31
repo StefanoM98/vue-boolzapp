@@ -43,6 +43,7 @@ img {
 /* CONTACT SECTION */
 
 .header-contact {
+    height: 90px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -131,7 +132,7 @@ img {
     height: calc(100% - 250px);
 }
 
-.users {
+.friends {
     border-top: 1px solid lightgray;
 }
 
@@ -161,7 +162,34 @@ img {
 
 .chat {
     height: calc(100% - 170px);
+    overflow: auto;
+    display: flex;
 }
+
+.container {
+    width: 100%;
+    margin: 20px auto;
+}
+
+.sms {
+    max-width: 50%;
+    min-width: 20%;
+    border-radius: 10px;
+    padding: 9px;
+}
+
+.white{
+    background-color: white;
+    margin-top: 50px;
+}
+
+.green {
+    background-color: #d5f9ba;
+    height: 40px;
+    margin-top: 50px;
+    margin-left: 50%;
+}
+
 
 .message {
     height: 80px;

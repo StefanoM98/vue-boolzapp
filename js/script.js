@@ -165,7 +165,17 @@ createApp ({
                         }
                     ],
                 }
-            ]
+            ],
+            newAvatar: "",
+            element:"",
+            newMessage: "",
+        }
+    },
+    methods: {
+        changeChat(element) {
+            this.newAvatar = element.avatar;
+            this.element = element;
+            this.newMessage = element.messages;
         }
     }
 }).mount("#app")
