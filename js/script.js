@@ -148,6 +148,7 @@ createApp ({
                     avatar: 'img/avatar_8.jpg',
                     visible: true,
                     messages: [
+
                         {
                             date: '10/01/2020 15:30:55',
                             message: 'Ciao, andiamo a mangiare la pizza stasera?',
@@ -169,6 +170,7 @@ createApp ({
             newAvatar: "",
             element:"",
             newMessage: "",
+            // myMessage: null,
         }
     },
     methods: {
@@ -176,6 +178,27 @@ createApp ({
             this.newAvatar = element.avatar;
             this.element = element;
             this.newMessage = element.messages;
+        },
+        addNewMessageInput(){
+            const myInput = this.$refs.new_message_input.value;
+            console.log(myInput);    
+            const myInputMessage = {
+                date: Date.now().toString(),
+                message : myInput,
+                status: 'sent'
+            }
+            this.newMessage.push(myInputMessage)
+            console.log(myInputMessage);
+        },
+        getLastMessage(elem) {
+            const countMessage = elem.messages.length;
+            const lastMessage = elem.messages[countMessage - 1].message;
+            return lastMessage;
+        },
+        getDate(elem) {
+            const countMessage = elem.messages.length;
+            const lastMessage = elem.messages[countMessage - 1].date.format("HH:mm");
+            return lastMessage;
         }
     }
 }).mount("#app")

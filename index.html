@@ -55,10 +55,10 @@
                             <img :src="friend.avatar" alt="" class="my-avatar">
                             <div class="description">
                                 <h3>{{friend.name}}</h3>
-                                <p>Ultimo messaggio inviato</p>
+                                <p>Ultimo messaggio inviato: {{ getLastMessage(friend) }}</p>
                             </div>
                             <div class="date">
-                                <p>12:00</p>
+                                <p>{{ getDate(friend) }}</p>
                             </div>
                         </div>
                     </div>
@@ -99,7 +99,7 @@
                     <a href="#"><i class="fa-regular fa-face-smile"></i></a>
                 </div>
                 <div class="search-message">
-                    <input type="text" placeholder="Scrivi un messaggio">
+                    <input ref="new_message_input" type="text" placeholder="Scrivi un messaggio" @keyup.enter="addNewMessageInput">
                 </div>
                 <div class="emoji">
                     <a href="#">
