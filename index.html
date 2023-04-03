@@ -46,7 +46,8 @@
                 <div class="font-aw">
                     <i class="fa-solid fa-magnifying-glass"></i>
                 </div>
-                <input type="text" placeholder="Cerca o inizia una nuova chat">
+                <label for="search-friend"></label>
+                <input type="text" id="search-friend" placeholder="Cerca o inizia una nuova chat">
             </div>
             <div class="chats-list">
                 <div class="users">
@@ -55,10 +56,10 @@
                             <img :src="friend.avatar" alt="" class="my-avatar">
                             <div class="description">
                                 <h3>{{friend.name}}</h3>
-                                <p>Ultimo messaggio inviato: {{ getLastMessage(friend) }}</p>
+                                <p>Ultimo messaggio: {{ getLastMessage(friend) }}</p>
                             </div>
                             <div class="date">
-                                <p>{{ getDate(friend) }}</p>
+                                <p>Ultimo accesso alle: 12:00</p>
                             </div>
                         </div>
                     </div>
@@ -91,6 +92,7 @@
                 <div class="container">
                     <div class="sms" v-for="sms in newMessage" :class="sms.status == 'sent' ? 'green' : 'white' ">
                         <p>{{ sms.message }}</p>
+                        <p class="date">{{ sms.date.substring(11).slice(0, - 3) }}</p>
                     </div>
                 </div>
             </div>

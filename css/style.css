@@ -128,7 +128,7 @@ img {
 /* CHATS SECTION */
 
 .chats-list {
-    overflow: auto;
+    overflow-y: scroll;
     height: calc(100% - 250px);
 }
 
@@ -162,12 +162,12 @@ img {
 
 .chat {
     height: calc(100% - 170px);
-    overflow: auto;
+    overflow-y: scroll;
     display: flex;
 }
 
 .container {
-    width: 100%;
+    width: 90%;
     margin: 20px auto;
 }
 
@@ -175,19 +175,28 @@ img {
     max-width: 50%;
     min-width: 20%;
     border-radius: 10px;
-    padding: 9px;
+    padding: 1rem 0.4rem;
+    display: flex;
 }
 
-.white{
+.white {
     background-color: white;
     margin-top: 50px;
+    position: relative;
 }
 
 .green {
     background-color: #d5f9ba;
-    height: 40px;
+    /* height: 40px; */
     margin-top: 50px;
     margin-left: 50%;
+    position: relative
+}
+
+.date {
+    position: absolute;
+    bottom: 0;
+    right: 10px;
 }
 
 
