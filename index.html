@@ -47,12 +47,12 @@
                     <i class="fa-solid fa-magnifying-glass"></i>
                 </div>
                 <label for="search-friend"></label>
-                <input type="text" id="search-friend" placeholder="Cerca o inizia una nuova chat">
+                <input type="search" id="search-friend" placeholder="Cerca o inizia una nuova chat" v-model="friendSearch" @keyup="getFriend">
             </div>
             <div class="chats-list">
                 <div class="users">
-                    <div class="friends" v-for= "friend in contacts">
-                        <div class="profile" @click="changeChat(friend)">
+                    <div class="friends" v-for= "friend in contacts" v-show="friend.visible">
+                        <div class="profile" @click="changeChat(friend)" :class="indexContact == friend ? 'active' : ''" >
                             <img :src="friend.avatar" alt="" class="my-avatar">
                             <div class="description">
                                 <h3>{{friend.name}}</h3>

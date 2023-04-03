@@ -170,19 +170,21 @@ createApp ({
             newAvatar: "",
             element:"",
             newMessage: "",
+            friendSearch:"",
+            indexContact : 0,
         }
     },
     methods: {
-        setContact(index) {
-            this.indexContact = index;
-        }, 
+        // setContact (index) {
+        // },
         changeChat(element) {
+            this.indexContact = element;
             this.newAvatar = element.avatar;
             this.element = element;
             this.newMessage = element.messages;
         },
         addNewMessageInput(){
-            let currentDate = new Date().toLocaleString("en-GB");
+            const currentDate = new Date().toLocaleString("en-GB");
             const myInput = this.$refs.new_message_input.value;
             console.log(myInput);    
             const myInputMessage = {
@@ -208,6 +210,11 @@ createApp ({
             const lastMessage = elem.messages[countMessage - 1].message;
             return lastMessage;
         },
+        getFriend() {
+            this.contacts.forEach(elem => {
+                elem.visible = elem.name.toLowerCase().includes(this.friendSearch);
+            })
+        }
         
     }
 }).mount("#app")

@@ -148,6 +148,10 @@ img {
     align-items: center;
 }
 
+.active {
+    background: rgba(0, 0, 0, 0.3);
+}
+
 .profile img {
     width: 100px;
 }
